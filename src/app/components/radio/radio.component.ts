@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-radio',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './radio.component.css'
 })
 export class RadioComponent {
+  @Output() selectionChange = new EventEmitter();
 
+  onSelectionChange(value: string) {
+    this.selectionChange.emit(value);
+  }
 }
