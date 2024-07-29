@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
   @Output() buttonClick = new EventEmitter();
+  @Input() class!: string;
 
   handleClick() {
     this.buttonClick.emit();
