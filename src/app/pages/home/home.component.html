@@ -2,9 +2,12 @@
   Angular Fighting Games
 </h1>
 <div class="flex justify-center mt-3">
-  <app-button>
+  <app-button (buttonClick)="goAddPage()">
     Add Jogo
   </app-button>
+  <app-dialog [isVisible]="isVisible">
+    <h1>Olá sou o form </h1>
+  </app-dialog>
 </div>
 <div class="grid gap-4 grid-cols-3 grid-rows-3 mt-4">
   <app-card>
