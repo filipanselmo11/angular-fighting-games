@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { FormComponent } from '../../components/form/form.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { RadioComponent } from '../../components/radio/radio.component';
 import { CommonModule } from '@angular/common';
+import { PersonagemFormComponent } from '../../components/personagem-form/personagem-form.component';
+import { JogoFormComponent } from '../../components/jogo-form/jogo-form.component';
 
 @Component({
   selector: 'app-add-jogo',
   standalone: true,
-  imports: [ CommonModule, FormComponent, ButtonComponent, RadioComponent ],
+  imports: [ CommonModule, ButtonComponent, RadioComponent, PersonagemFormComponent, JogoFormComponent ],
   templateUrl: './add-jogo.component.html',
   styleUrl: './add-jogo.component.css'
 })
