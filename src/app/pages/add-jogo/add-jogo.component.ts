@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { PersonagemFormComponent } from '../../components/personagem-form/personagem-form.component';
 import { JogoFormComponent } from '../../components/jogo-form/jogo-form.component';
 
+
 @Component({
   selector: 'app-add-jogo',
   standalone: true,
@@ -15,7 +16,13 @@ import { JogoFormComponent } from '../../components/jogo-form/jogo-form.componen
 export class AddJogoComponent {
   selectedType: string = 'Personagem';
 
+  constructor() {
+
+  }
+
+
   onTypeChange(type: string) {
     this.selectedType = type;
   }
+
 }
