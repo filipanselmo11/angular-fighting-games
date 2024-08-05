@@ -5,11 +5,12 @@ import { DialogComponent } from '../../components/dialog/dialog.component';
 import { Router } from '@angular/router';
 import { PersonagemService } from '../../services/personagem.service';
 import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ CardComponent, ButtonComponent, DialogComponent],
+  imports: [ CardComponent, ButtonComponent, DialogComponent, CommonModule ],
   // providers: [
   //   PersonagemService
   // ],
