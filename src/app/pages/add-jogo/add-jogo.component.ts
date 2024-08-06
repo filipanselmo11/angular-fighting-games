@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../components/button/button.component';
-import { RadioComponent } from '../../components/radio/radio.component';
 import { CommonModule } from '@angular/common';
 import { PersonagemFormComponent } from '../../components/personagem-form/personagem-form.component';
-import { JogoFormComponent } from '../../components/jogo-form/jogo-form.component';
 import { Router } from '@angular/router';
 import { PersonagemService } from '../../services/personagem.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { InputComponent } from '../../components/input/input.component';
 
 
 @Component({
   selector: 'app-add-jogo',
   standalone: true,
-  imports: [ CommonModule, ButtonComponent, PersonagemFormComponent, ReactiveFormsModule],
+  imports: [
+      CommonModule,
+      ButtonComponent,
+      PersonagemFormComponent,
+      ReactiveFormsModule,
+      InputComponent
+    ],
   templateUrl: './add-jogo.component.html',
   styleUrl: './add-jogo.component.css'
 })
