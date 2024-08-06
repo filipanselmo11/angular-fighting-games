@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,14 @@ export class PersonagemService {
     return this.httpClient.get<any[]>(`${this.baseUrl}/personagens`).subscribe(products => {
       this.personaSubject.next(products);
     });
+  }
+
+  createPersonagem(nome: string, img: string, descricao: string, jogo: string): Observable<any> {
+    const data = { nome, img, descricao, jogo };
+    return this.httpClient.post<any>(`${this.baseUrl}/personagens`, data)
+      .pipe(tap(newPersonagem => {
+        const currentPersonagens = this.personaSubject.value;
+        this.personaSubject.next([...currentPersonagens, newPersonagem]);
+      }));
   }
 }
