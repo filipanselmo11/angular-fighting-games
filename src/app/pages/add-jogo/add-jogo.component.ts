@@ -23,6 +23,7 @@ import { InputComponent } from '../../components/input/input.component';
 })
 export class AddJogoComponent {
   personagemForm: FormGroup;
+  criando: boolean = true;
 
   constructor(private router: Router, private personagemService: PersonagemService) {
     this.personagemForm = new FormGroup({
@@ -35,6 +36,7 @@ export class AddJogoComponent {
 
   onCreatePersonagem() {
     if (this.personagemForm.valid) {
+      this.criando = false;
       this.personagemService.createPersonagem(
         this.personagemForm.value.nome,
         this.personagemForm.value.img,
@@ -43,7 +45,7 @@ export class AddJogoComponent {
       ).subscribe({
         next: data => {
           console.log('Data ', data);
-          this.router.navigate(['home']);
+          this.router.navigate(['']);
         }
       })
     } else {
