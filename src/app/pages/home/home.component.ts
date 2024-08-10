@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { PersonagemService } from '../../services/personagem.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { PersonagemResponse } from '../../interfaces/personagem';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   isVisible: boolean = false;
-  personagens$: Observable<any[]>;
+  carregando: boolean = true;
+  personagens$: Observable<PersonagemResponse[]>;
 
   constructor(private router: Router, private personagemService: PersonagemService) {
     this.personagens$ = this.personagemService.personagens$;
@@ -40,6 +42,7 @@ export class HomeComponent implements OnInit {
   getPersonagens() {
     this.personagemService.personagens$.subscribe({
       next: data => {
+        this.carregando = false;
         console.log('Personagens ', data);
       }, error: err => {
         console.error(err);

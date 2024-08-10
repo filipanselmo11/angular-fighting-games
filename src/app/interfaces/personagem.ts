@@ -1,15 +1,15 @@
 export interface PersonagemRequest {
   nome: string
-  imagem: string
+  img: string
   descricao: string
   jogo: string
 
 }
 
 export interface PersonagemResponse {
-  id: string
+  id?: string
   nome: string
-  imagem: string
+  img: string
   descricao: string
   jogo: string
 
