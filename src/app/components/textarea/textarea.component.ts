@@ -18,7 +18,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@a
 export class TextareaComponent implements ControlValueAccessor {
   textClass!: string;
   placeholder!: string;
-  textName!: string;
   labelClass!: string;
   value!: string;
 
