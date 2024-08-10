@@ -18,8 +18,8 @@ export class PersonagemService {
   }
 
   getPersonagens() {
-    return this.httpClient.get<PersonagemResponse[]>(`${this.baseUrl}/personagens`).subscribe(products => {
-      this.personaSubject.next(products);
+    return this.httpClient.get<PersonagemResponse[]>(`${this.baseUrl}/personagens`).subscribe(personagens => {
+      this.personaSubject.next(personagens);
     });
   }
 
