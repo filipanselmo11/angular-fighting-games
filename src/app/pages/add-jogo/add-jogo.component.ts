@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { PersonagemService } from '../../services/personagem.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputComponent } from '../../components/input/input.component';
+import { TextareaComponent } from '../../components/textarea/textarea.component';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { InputComponent } from '../../components/input/input.component';
       ButtonComponent,
       PersonagemFormComponent,
       ReactiveFormsModule,
-      InputComponent
+      InputComponent,
+      TextareaComponent
     ],
   templateUrl: './add-jogo.component.html',
   styleUrl: './add-jogo.component.css'
