@@ -20,7 +20,7 @@ import { PersonagemResponse } from '../../interfaces/personagem';
 })
 export class HomeComponent implements OnInit {
   isVisible: boolean = false;
-  carregando: boolean = true;
+  // carregando: boolean = true;
   personagens$: Observable<PersonagemResponse[]>;
 
   constructor(private router: Router, private personagemService: PersonagemService) {
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   getPersonagens() {
     this.personagemService.personagens$.subscribe({
       next: data => {
-        this.carregando = false;
+        // this.carregando = false;
         console.log('Personagens ', data);
       }, error: err => {
         console.error(err);

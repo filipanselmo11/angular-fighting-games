@@ -1,26 +1,22 @@
 <h1
-  class="font-sans text-5xl antialiased font-semibold leading-tight tracking-normal text-transparent bg-gradient-to-tr from-blue-500 to-blue-400 bg-clip-text ml-3 pl-4 mt-3">
+  class="font-sans text-3xl sm:text-4xl md:text-6xl antialiased font-semibold leading-tight tracking-normal text-transparent bg-gradient-to-tr from-blue-500 to-blue-400 bg-clip-text ml-2 sm:ml-4 pl-3 sm:pl-4 mt-2 sm:mt-3">
   Angular Fighting Games
 </h1>
-<div *ngIf="carregando" class="flex justify-center mt-3">
-  <h1 class="font-sans text-5xl antialiased font-semibold leading-tight tracking-normal text-transparent bg-gradient-to-tr from-blue-500 to-blue-400 bg-clip-text ml-3 pl-4 mt-3">Carregando Personagens</h1>
+<div class="flex justify-center mt-3 flex-wrap">
+  <app-button (buttonClick)="goAddPage()"
+    [class]="'select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'">
+    Add Personagem
+  </app-button>
+  <app-dialog [isVisible]="isVisible" class="w-full sm:w-auto mt-2 sm:mt-0">
+    <h1>Olá sou o form</h1>
+  </app-dialog>
 </div>
-<div *ngIf="!carregando">
-  <div class="flex justify-center mt-3">
-    <app-button (buttonClick)="goAddPage()"
-      [class]="'select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'">
-      Add Personagem
-    </app-button>
-    <app-dialog [isVisible]="isVisible">
-      <h1>Olá sou o form </h1>
-    </app-dialog>
-  </div>
-  <div class="grid gap-4 grid-cols-3 grid-rows-3 mt-4">
-    <app-card *ngFor="let personagem of personagens$ | async" [nome]="personagem.nome" [jogo]="personagem.jogo"
-      [img]="personagem.img">
-      <!-- <app-button>
-          Detalhes
-        </app-button> -->
-    </app-card>
-  </div>
+
+<div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4">
+  <app-card *ngFor="let personagem of personagens$ | async" [nome]="personagem.nome" [jogo]="personagem.jogo"
+    [img]="personagem.img">
+    <!-- <app-button>
+        Detalhes
+      </app-button> -->
+  </app-card>
 </div>
